@@ -6,9 +6,11 @@ import { DisplayUserComponent } from './display-user/display-user.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { LoginComponent } from './login/login.component';
 import { adminGuardGuard } from './guards/admin-guard.guard';
+import { NavComponent } from './nav/nav.component';
 
 export const routes: Routes = [
     {path:'',component:HomeComponent,children:[
+        {path:'',component:NavComponent},
         {path:'create',component:StudentSignupComponent},
         {path:'login',component:LoginComponent},
         {path:'admin',component:AdminSignupComponent},
