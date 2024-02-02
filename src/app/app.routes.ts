@@ -16,6 +16,6 @@ export const routes: Routes = [
             {path:'',component:DisplayUserComponent}
         ],canActivate:[adminGuardGuard]},
     
-        {path:'**',component:ErrorPageComponent}
+        // {path:'**',component:    }
     ]}
 ];

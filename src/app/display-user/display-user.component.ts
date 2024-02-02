@@ -32,7 +32,7 @@ export class DisplayUserComponent {
     console.log(id);
     let del = this.newUserArray.filter((eachUser, index) => index != id)
     this.newUserArray = del
-    localStorage.setItem('students', JSON.stringify(this.newUserArray))
+    localStorage.setItem('setData', JSON.stringify(this.newUserArray))
 
   }
 }

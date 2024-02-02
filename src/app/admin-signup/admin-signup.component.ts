@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 interface adminInterface {
   Firstname: string;
   Lastname: string;
@@ -27,14 +28,24 @@ export class AdminSignupComponent {
   public classStyle = '';
 
   public adminArray: adminInterface[] = []
+  constructor(public route:Router){}
   ngOnInit() {
     if (localStorage['setAdmin']) {
       this.adminArray= JSON.parse(localStorage.getItem('setAdmin')!);
     }
   }
   createAdmin() {
-   
-    let userObject = {
+    if (!this.firstname || !this.lastname || !this.email || !this.password || !this.age) {
+      this.message = 'All fields are required';
+      this.classStyle = 'alert alert-danger text-center';
+      setTimeout(() => {
+        this.message = '';
+        this.classStyle = '';
+      }, 2000);
+    }
+    else{
+      
+      let userObject = {
       Firstname: this.firstname,
       Lastname: this.lastname,
       Email: this.email,
@@ -44,7 +55,8 @@ export class AdminSignupComponent {
     this.adminArray.push(userObject);
     localStorage.setItem('setAdmin', JSON.stringify(this.adminArray));
     console.log(this.adminArray);
-    
+    this.route.navigate(['/login'])
+  }
   }
 
 
