@@ -2,11 +2,11 @@
 <div class="container mt-5 py-5">
     <div class="row">
         <div class="{{style}}">
-            <h4 class="text-center ">ADMIN LOG-IN</h4>
+            <h4 class="text-center ">(ADMIN) LOG-IN</h4>
             <div class="{{classStyle}}">{{message}}</div>
             <input type="text" placeholder="Email" [(ngModel)]="email" class="{{input}}">
             <input type="text" placeholder="Password" [(ngModel)]="password" class="{{input}}">
-            <button class="btn btn-primary" (click)="createStudent()">LoginUser</button>
+            <button class="btn btn-primary" (click)="loginAdmin()">LoginUser</button>
         </div>
     </div>
 </div>

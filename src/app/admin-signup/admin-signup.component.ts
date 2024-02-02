@@ -27,29 +27,25 @@ export class AdminSignupComponent {
   public classStyle = '';
 
   public adminArray: adminInterface[] = []
-  // ngOnInit() {
-  //   if (localStorage['setAdmin']) {
-  //     this.adminArray= JSON.parse(localStorage.getItem('setAdmin')!);
-  //   }
-  // }
-
-  createAdmin() {
-    alert("fhhh")
+  ngOnInit() {
+    if (localStorage['setAdmin']) {
+      this.adminArray= JSON.parse(localStorage.getItem('setAdmin')!);
+    }
   }
-  // createAdmin() {
+  createAdmin() {
    
-  //   let userObject = {
-  //     Firstname: this.firstname,
-  //     Lastname: this.lastname,
-  //     Email: this.email,
-  //     Password: this.password,
-  //     Age: this.age
-  //   };
-  //   this.adminArray.push(userObject);
-  //   localStorage.setItem('setAdmin', JSON.stringify(this.adminArray));
-  //   console.log(this.adminArray);
+    let userObject = {
+      Firstname: this.firstname,
+      Lastname: this.lastname,
+      Email: this.email,
+      Password: this.password,
+      Age: this.age
+    };
+    this.adminArray.push(userObject);
+    localStorage.setItem('setAdmin', JSON.stringify(this.adminArray));
+    console.log(this.adminArray);
     
-  // }
+  }
 
 
 }
