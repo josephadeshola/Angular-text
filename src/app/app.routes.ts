@@ -13,8 +13,9 @@ export const routes: Routes = [
         {path:'login',component:LoginComponent},
         {path:'admin',component:AdminSignupComponent},
         {path:'dashboard',children:[
-            {path:'display',component:DisplayUserComponent}
+            {path:'',component:DisplayUserComponent}
         ],canActivate:[adminGuardGuard]},
+    
         {path:'**',component:ErrorPageComponent}
     ]}
 ];

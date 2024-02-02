@@ -54,7 +54,7 @@ constructor(public route:Router){}
       };
       this.userData.push(userObject);
       localStorage.setItem('setData', JSON.stringify(this.userData));
-      this.route.navigate(['login'])
+      this.route.navigate(['dashboard'])
     }
   }
 }
